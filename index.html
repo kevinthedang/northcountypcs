@@ -2,11 +2,355 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>North County PCs</title>
-        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Custom PC Builds, Upgrades &amp; Tune-Ups in Oceanside, CA | North County PCs</title>
+        <meta
+            name="description"
+            content="Custom PC builds, SSD and RAM upgrades, and fresh Windows installs in Oceanside, California. Free first look, honest quotes, drop-off or on-site service across North County."
+        />
+        <link rel="canonical" href="https://northcountypcs.com/" />
+        <meta name="theme-color" content="#0e7490" />
+        <meta name="color-scheme" content="light dark" />
+        <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="style.css" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="North County PCs" />
+        <meta property="og:title" content="Custom PC Builds, Upgrades &amp; Tune-Ups in Oceanside, CA" />
+        <meta
+            property="og:description"
+            content="Custom PC builds, upgrades, and tune-ups in Oceanside. Free first look, honest quotes, and no work without your approval."
+        />
+        <meta property="og:url" content="https://northcountypcs.com/" />
+        <!-- TODO: add an og:image (1200x630 png/jpg) once you have a logo or storefront photo -->
+        <meta name="twitter:card" content="summary" />
+
+        <!-- TODO: replace telephone, email, and priceRange with your real details before launch -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "ComputerStore",
+                "@id": "https://northcountypcs.com/#business",
+                "name": "North County PCs",
+                "description": "Custom computer builds, hardware upgrades, and tune-ups serving Oceanside and North County, California.",
+                "url": "https://northcountypcs.com/",
+                "telephone": "+1-760-555-0100",
+                "email": "hello@northcountypcs.com",
+                "priceRange": "$$",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Oceanside",
+                    "addressRegion": "CA",
+                    "addressCountry": "US"
+                },
+                "areaServed": [
+                    { "@type": "City", "name": "Oceanside" },
+                    { "@type": "City", "name": "Carlsbad" },
+                    { "@type": "City", "name": "Vista" },
+                    { "@type": "City", "name": "San Marcos" },
+                    { "@type": "City", "name": "Encinitas" },
+                    { "@type": "City", "name": "Escondido" },
+                    { "@type": "City", "name": "Fallbrook" }
+                ],
+                "makesOffer": [
+                    {
+                        "@type": "Offer",
+                        "name": "Quick diagnostic",
+                        "price": "0",
+                        "priceCurrency": "USD",
+                        "description": "Free initial check of power, boot, and obvious hardware or software faults."
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Full diagnostic",
+                        "price": "49",
+                        "priceCurrency": "USD",
+                        "description": "Bench testing with a written quote before any work begins. Credited toward the repair if the quote is accepted."
+                    }
+                ]
+            }
+        </script>
     </head>
     <body>
-        <h1>Site Under Construction</h1>
+        <a class="skip-link" href="#main">Skip to content</a>
+
+        <header class="site-header">
+            <div class="wrap site-header__inner">
+                <a class="brand" href="/">North County PCs</a>
+                <nav class="nav" aria-label="Primary">
+                    <a href="#services">Services</a>
+                    <a href="#diagnostic">Pricing</a>
+                    <a href="#process">How it works</a>
+                    <a href="#area">Service area</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <!-- TODO: real phone number -->
+                <a class="btn btn--sm" href="tel:+17605550100">Call now</a>
+            </div>
+        </header>
+
+        <main id="main">
+            <section class="hero">
+                <div class="wrap">
+                    <p class="hero__eyebrow">Locally owned &middot; By appointment</p>
+                    <h1>Custom PC builds, upgrades, and tune-ups in Oceanside.</h1>
+                    <p class="lead">
+                        Slow machine, full drive, or a build you'd rather not assemble yourself?
+                        I'll tell you honestly whether an upgrade is worth it &mdash; and quote it in
+                        plain English before any work starts.
+                    </p>
+                    <div class="hero__actions">
+                        <!-- TODO: real phone number -->
+                        <a class="btn" href="tel:+17605550100">Call (760) 555-0100</a>
+                        <!-- TODO: real email address -->
+                        <a class="btn btn--ghost" href="mailto:hello@northcountypcs.com?subject=Build%20or%20upgrade%20request">
+                            Email about your PC
+                        </a>
+                    </div>
+                    <p class="hero__note">
+                        Free initial check &middot; Full diagnostic only if needed &middot; No work
+                        without your approval
+                    </p>
+                </div>
+            </section>
+
+            <section id="services">
+                <div class="wrap">
+                    <div class="section__head">
+                        <h2>What I work on</h2>
+                        <p>
+                            Desktops and laptops, home and small business. Builds, upgrades, and clean
+                            installs done carefully &mdash; plus a straight answer on whether the
+                            machine is worth it.
+                        </p>
+                    </div>
+
+                    <ul class="cards">
+                        <li class="card">
+                            <h3>Custom PC builds</h3>
+                            <p>
+                                Gaming rigs, workstations, and budget office machines specced to what you
+                                actually do &mdash; assembled, cable-managed, and stress-tested before
+                                pickup.
+                            </p>
+                        </li>
+                        <li class="card">
+                            <h3>Upgrades</h3>
+                            <p>
+                                SSD and RAM upgrades, GPU installs, PSU replacements, cooling fixes.
+                                Usually the cheapest way to make an older machine feel new again.
+                            </p>
+                        </li>
+                        <li class="card">
+                            <h3>Tune-ups &amp; installs</h3>
+                            <p>
+                                Dust and thermal paste, a clean Windows install, drivers, and moving
+                                your files to a new drive. The difference is usually dramatic.
+                            </p>
+                        </li>
+                        <li class="card">
+                            <h3>Diagnostics &amp; advice</h3>
+                            <p>
+                                Not sure if it's worth upgrading or replacing? Bring it in for a look.
+                                I'll tell you what I think is wrong, what I can fix, and what's beyond
+                                me.
+                            </p>
+                        </li>
+                    </ul>
+                    <p class="services__note">
+                        Board-level repair and data recovery from failed drives I refer out to
+                        specialists &mdash; those are jobs you only get one shot at.
+                    </p>
+                </div>
+            </section>
+
+            <section class="ethos" aria-labelledby="ethos-heading">
+                <div class="wrap">
+                    <p class="ethos__eyebrow">Repair first</p>
+                    <h2 id="ethos-heading">I'd rather save your machine than sell you a new one.</h2>
+                    <p class="ethos__body">
+                        There's already too much e-waste in the world. If a new SSD buys your laptop
+                        another three years, that's the answer you'll get &mdash; even though a new
+                        build is the bigger sale. When replacement really is the right call, I'll
+                        tell you straight, but I won't invent a reason to sell you one.
+                    </p>
+                    <p class="ethos__note">
+                        I'm self-taught, building this up one machine at a time. So I'm careful, I
+                        check my work twice, and if a job is outside what I can do well, I'll tell
+                        you &mdash; I won't learn on your machine.
+                    </p>
+                </div>
+            </section>
+
+            <section id="diagnostic">
+                <div class="wrap">
+                    <div class="section__head">
+                        <h2>Free first look. Paid only if I have to dig.</h2>
+                        <p>
+                            Bring a machine in and I'll check it at no charge. If the fault isn't
+                            obvious and needs bench time, I'll quote a full diagnostic before starting.
+                        </p>
+                    </div>
+
+                    <div class="pricing">
+                        <article class="plan">
+                            <div class="plan__head">
+                                <p class="plan__price">Free</p>
+                                <h3 class="plan__name">Quick diagnostic</h3>
+                            </div>
+                            <ul class="checklist">
+                                <li>Power, boot, and obvious hardware or software faults</li>
+                                <li>A straight answer on whether it's worth fixing</li>
+                                <li>Rough estimate on the spot, no obligation</li>
+                            </ul>
+                            <p class="plan__note">
+                                Most problems stop here. If yours doesn't, I'll tell you before doing
+                                anything else.
+                            </p>
+                        </article>
+
+                        <!-- TODO: confirm the $49 amount and whether it is credited toward the repair -->
+                        <article class="plan plan--featured">
+                            <div class="plan__head">
+                                <p class="plan__price">$49</p>
+                                <h3 class="plan__name">Full diagnostic</h3>
+                            </div>
+                            <ul class="checklist">
+                                <li>Bench testing and component swaps when the fault isn't obvious</li>
+                                <li>Drive health, memory, and temperature checks</li>
+                                <li>Written findings and a firm quote before any repair</li>
+                            </ul>
+                            <p class="plan__note">
+                                The $49 comes off the repair if you go ahead. Decline the quote and
+                                you pay only the diagnostic. If it turns into a bigger job, you'll
+                                hear from me before it goes further.
+                            </p>
+                        </article>
+                    </div>
+
+                    <p class="pricing__foot">
+                        Not sure which you need? Call and describe the symptom &mdash; I'll tell you
+                        over the phone, free.
+                    </p>
+
+                    <div class="detail">
+                        <h3>What the full diagnostic gets you</h3>
+                        <ul class="detail__list detail__list--checks">
+                            <li>
+                                <strong>A confirmed fault, not a guess.</strong> I reproduce the problem
+                                instead of swapping parts and hoping something sticks.
+                            </li>
+                            <li>
+                                <strong>I test before you buy parts.</strong> Temperatures, memory, and
+                                drive health get checked so you're not paying for a replacement that
+                                isn't the problem.
+                            </li>
+                            <li>
+                                <strong>Written findings and a firm quote.</strong> Likely cause,
+                                recommended fix, parts and labor, and anything I couldn't verify.
+                            </li>
+                            <li>
+                                <strong>Your data left alone.</strong> I only look at what's needed to
+                                diagnose the fault, and I'll ask before copying anything.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="process">
+                <div class="wrap">
+                    <div class="section__head">
+                        <h2>How it works</h2>
+                        <p>Four steps, no runaround.</p>
+                    </div>
+
+                    <ol class="steps">
+                        <li>
+                            <h3>Tell me what's wrong</h3>
+                            <p>Call or email with the machine and the symptom. A photo or error message helps.</p>
+                        </li>
+                        <li>
+                            <h3>Drop off or book on-site</h3>
+                            <p>
+                                Drop off in Oceanside by appointment, or have me come to you anywhere
+                                in North County.
+                            </p>
+                        </li>
+                        <li>
+                            <h3>Approve the quote</h3>
+                            <p>
+                                Once I know what's wrong you get a firm price. Nothing gets replaced
+                                or repaired until you approve it.
+                            </p>
+                        </li>
+                        <li>
+                            <h3>Pick up a working machine</h3>
+                            <p>Everything is tested and verified before it goes back to you.</p>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="area">
+                <div class="wrap">
+                    <div class="contact-grid">
+                        <div class="panel">
+                            <h2>Service area</h2>
+                            <p class="muted">
+                                Based in Oceanside. Drop-off is by appointment; on-site visits cover most
+                                of North County — call to confirm your address.
+                            </p>
+                            <ul class="tags">
+                                <li>Oceanside</li>
+                                <li>Carlsbad</li>
+                                <li>Vista</li>
+                                <li>San Marcos</li>
+                                <li>Encinitas</li>
+                                <li>Escondido</li>
+                                <li>Fallbrook</li>
+                                <li>Camp Pendleton</li>
+                            </ul>
+                        </div>
+
+                        <div class="panel" id="contact">
+                            <h2>Get in touch</h2>
+                            <dl class="contact-list">
+                                <div>
+                                    <dt>Phone</dt>
+                                    <!-- TODO: real phone number -->
+                                    <dd><a href="tel:+17605550100">(760) 555-0100</a></dd>
+                                </div>
+                                <div>
+                                    <dt>Email</dt>
+                                    <!-- TODO: real email address -->
+                                    <dd><a href="mailto:hello@northcountypcs.com">hello@northcountypcs.com</a></dd>
+                                </div>
+                                <div>
+                                    <dt>Hours</dt>
+                                    <dd>By appointment, Monday&ndash;Saturday</dd>
+                                </div>
+                                <div>
+                                    <dt>Drop-off</dt>
+                                    <dd>Oceanside &mdash; address provided when you book</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="wrap">
+                <address>
+                    North County PCs &middot; Oceanside, California &middot;
+                    <!-- TODO: real phone number -->
+                    <a href="tel:+17605550100">(760) 555-0100</a>
+                </address>
+                <p>&copy; 2026 North County PCs</p>
+            </div>
+        </footer>
     </body>
 </html>

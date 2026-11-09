@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page not found | North County PCs" noindex>
+    <section class="hero hero--404">
+        <div class="wrap">
+            <p class="hero__eyebrow">404 &middot; Page not found</p>
+            <h1>That page isn't here.</h1>
+            <p class="lead">
+                The link may be old or mistyped. Everything I do &mdash; builds, upgrades,
+                and tune-ups in Oceanside &mdash; is on the home page.
+            </p>
+            <div class="hero__actions">
+                <a class="btn" href="/">Back to home</a>
+                <!-- TODO: real phone number -->
+                <a class="btn btn--ghost" href="tel:+17605550100">Call (760) 555-0100</a>
+            </div>
+            <p class="hero__note">
+                Free initial check &middot; Full diagnostic only if needed &middot; No work
+                without your approval
+            </p>
+        </div>
+    </section>
+
+    <section aria-labelledby="popular-heading">
+        <div class="wrap">
+            <div class="section__head">
+                <h2 id="popular-heading">Looking for something specific?</h2>
+                <p>These are the pages most people are after.</p>
+            </div>
+
+            <ul class="cards">
+                <li class="card">
+                    <h3><a href="/#services">Services</a></h3>
+                    <p>
+                        Custom builds, SSD and RAM upgrades, tune-ups, and installs &mdash;
+                        done carefully in Oceanside.
+                    </p>
+                </li>
+                <li class="card">
+                    <h3><a href="/#diagnostic">Pricing</a></h3>
+                    <p>
+                        A free first look, and a full diagnostic only if the fault needs
+                        bench time.
+                    </p>
+                </li>
+                <li class="card">
+                    <h3><a href="/#contact">Contact</a></h3>
+                    <p>
+                        Call or email with the machine and the symptom, and I'll tell you
+                        what makes sense.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+</BaseLayout>

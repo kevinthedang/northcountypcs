@@ -1,0 +1,48 @@
+name: Dependency audit
+
+on:
+    push:
+        branches: [master, dev]
+    pull_request:
+    schedule:
+        # GitHub cron is UTC only, and Pacific is UTC-8 (PST) or UTC-7 (PDT).
+        # Schedule both and let the guard below skip whichever isn't 8am local.
+        - cron: '0 15 * * 1' # 8am PDT
+        - cron: '0 16 * * 1' # 8am PST
+    workflow_dispatch:
+
+permissions:
+    contents: read
+
+jobs:
+    audit:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check Pacific time
+              id: pacific
+              if: github.event_name == 'schedule'
+              run: |
+                  hour=$(TZ=America/Los_Angeles date +%H)
+                  echo "Hour in Pacific time: $hour"
+                  if [ "$hour" = "08" ]; then
+                      echo "should_run=true" >> "$GITHUB_OUTPUT"
+                  else
+                      echo "should_run=false" >> "$GITHUB_OUTPUT"
+                  fi
+
+            - uses: actions/checkout@v4
+              if: github.event_name != 'schedule' || steps.pacific.outputs.should_run == 'true'
+
+            - uses: actions/setup-node@v4
+              if: github.event_name != 'schedule' || steps.pacific.outputs.should_run == 'true'
+              with:
+                  node-version: 24
+                  cache: npm
+
+            - name: Install dependencies
+              if: github.event_name != 'schedule' || steps.pacific.outputs.should_run == 'true'
+              run: npm ci
+
+            - name: Audit dependencies
+              if: github.event_name != 'schedule' || steps.pacific.outputs.should_run == 'true'
+              run: npm run audit

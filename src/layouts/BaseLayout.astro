@@ -1,0 +1,44 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+    title: string;
+    description?: string;
+    canonical?: string;
+    noindex?: boolean;
+}
+
+const { title, description, canonical, noindex = false } = Astro.props;
+const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{title}</title>
+        {description && <meta name="description" content={description} />}
+        {
+            noindex ? (
+                <meta name="robots" content="noindex" />
+            ) : (
+                <link rel="canonical" href={canonicalURL} />
+            )
+        }
+        <meta name="theme-color" content="#0e7490" />
+        <meta name="color-scheme" content="light dark" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <slot name="head" />
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to content</a>
+        <Header />
+        <main id="main">
+            <slot />
+        </main>
+        <Footer />
+    </body>
+</html>

@@ -3,7 +3,8 @@
 Marketing site for **North County PCs** — custom PC builds, upgrades, and tune-ups in
 Oceanside, California and the surrounding North County area.
 
-Static HTML and CSS. No build step, no dependencies, no JavaScript.
+Built with [Astro](https://astro.build/), statically rendered. There is no client-side
+JavaScript by default.
 
 ## Scope
 
@@ -27,26 +28,70 @@ list, in the `<title>`/description if it matters for search, and in the JSON-LD 
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | The entire site: hero, services, pricing, process, service area, contact |
-| `style.css` | Design tokens, layout, dark mode, responsive rules |
-| `404.html` | Custom not-found page (GitHub Pages serves this automatically) |
-| `favicon.svg` | Browser tab icon |
-| `robots.txt`, `sitemap.xml` | Search engine discovery |
+| `src/pages/index.astro` | The entire site: hero, services, pricing, process, service area, contact |
+| `src/pages/404.astro` | Custom not-found page (built to `404.html`, which Pages serves automatically) |
+| `src/layouts/BaseLayout.astro` | Shared `<head>`, header, main wrapper, and footer |
+| `src/components/Header.astro` | Brand, primary nav, and call button |
+| `src/components/Footer.astro` | Address, phone, and copyright |
+| `src/styles/global.css` | Design tokens, layout, dark mode, responsive rules |
+| `public/favicon.svg`, `public/robots.txt` | Static files copied unchanged into the build |
+| `astro.config.mjs` | Site URL and sitemap integration |
+| `package.json`, `package-lock.json` | Astro, build scripts, and dev dependencies |
+| `.github/workflows/test.yml` | CI: type-check, build, and validate HTML on push/PR |
+| `.github/workflows/audit.yml` | Dependency audit on push/PR and weekly |
+| `tsconfig.json`, `.htmlvalidate.json` | Astro/TypeScript and HTML validation config |
+
+The sitemap is generated at build time at `/sitemap-index.xml`; `robots.txt` points to it.
+`_internal/` is not published — only `public/` and the built pages are deployed.
 
 ## Local preview
 
 ```sh
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Then open <http://localhost:8000>.
+Then open <http://localhost:4321>.
+
+To check the production build:
+
+```sh
+npm run build
+npm run preview
+```
+
+## Tests
+
+```sh
+npm test
+```
+
+That runs three things:
+
+1. `astro check` — Astro, TypeScript, and template diagnostics.
+2. `astro build` — verifies the production build succeeds.
+3. `html-validate "dist/**/*.html"` — checks the built pages for HTML and accessibility issues.
+
+The same command runs in CI via `.github/workflows/test.yml` on pushes to `master` and
+`dev`, and on pull requests.
+
+### Dependency audit
+
+```sh
+npm run audit
+```
+
+That runs `npm audit --audit-level=high`, so the command fails on high or critical
+vulnerabilities. `.github/workflows/audit.yml` runs it on pushes, pull requests, and once a
+week at 8am Pacific — it schedules both 15:00 and 16:00 UTC and skips whichever isn't 8am
+locally, so it stays correct across daylight saving time.
 
 ## Before launch — replace the placeholders
 
-Every invented value is marked with a `<!-- TODO -->` comment in the HTML. Search for `TODO`:
+Every invented value is marked with a `<!-- TODO -->` comment in the source. Search for `TODO`:
 
 ```sh
-grep -n TODO index.html
+grep -rn TODO src
 ```
 
 - [ ] **Phone number** — `(760) 555-0100` / `tel:+17605550100` appears in the header,
@@ -76,18 +121,24 @@ grep -n TODO index.html
 - [ ] **Drop-off address** — currently "address provided when you book". Add a street
       address here and to the `PostalAddress` in JSON-LD once you have one.
 - [ ] **Hours** — currently "By appointment, Monday–Saturday".
-- [ ] **Domain** — `northcountypcs.com` is used in the canonical tag, Open Graph tag,
-      `sitemap.xml`, and JSON-LD. Update all five if the domain differs.
+- [ ] **Domain** — `northcountypcs.com` is used in `astro.config.mjs`, the canonical and
+      Open Graph tags in `src/pages/index.astro`, the JSON-LD block, and
+      `public/robots.txt`. Update them all if the domain differs.
 - [ ] **Open Graph image** — add `og:image` (1200×630) once you have a logo or photo.
 
 ## Deploying
 
-GitHub Pages, from `master`:
+The site is fully static. Point the host at this repository and have it run:
 
-1. Repository → Settings → Pages.
-2. Source: *Deploy from a branch*, branch `master`, folder `/ (root)`.
-3. If you use a custom domain, add a `CNAME` file containing the bare domain and enable
-   **Enforce HTTPS**.
+```sh
+npm ci
+npm run build
+```
+
+Then serve `dist/`. This works on Cloudflare Pages, Netlify, Vercel, or GitHub Pages with an
+Actions-based build. Set the build output directory to `dist`.
+
+If the host needs a custom domain or `CNAME`, configure that in the host's settings.
 
 ## SEO notes
 
@@ -97,6 +148,7 @@ feeds Google's local results, so keep the name, address, and phone there identic
 Google Business Profile listing — inconsistent NAP data hurts local ranking more than any
 on-page tweak helps.
 
-If the site grows past a few pages, the hand-written nav and footer will need to be
-duplicated in every file. At that point move to a static site generator (Astro or Eleventy)
-rather than maintaining the copies by hand.
+Shared markup lives in `src/layouts/BaseLayout.astro` and `src/components/`. Add new pages
+as `.astro` files in `src/pages/`; the header, footer, and `<head>` come along automatically.
+If this grows into a blog or a set of service-area pages, look at Astro content collections
+so the copy and metadata stay in data files rather than hand-written markup.

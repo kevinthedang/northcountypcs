@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Cta from '../components/Cta.astro';
+
+const title = 'Pricing & Diagnostics | North County PCs';
+const description =
+    'Free first look, a $49 full diagnostic, written findings, and a firm quote before any repair in Oceanside, California.';
+---
+
+<BaseLayout title={title} description={description}>
+    <PageHero
+        eyebrow="Pricing"
+        title="Free first look. Paid only if I have to dig."
+        lead="Bring a machine in and I'll check it at no charge. If the fault isn't obvious and needs bench time, I'll quote a full diagnostic before starting."
+    />
+
+    <section aria-labelledby="pricing-heading">
+        <div class="wrap">
+            <h2 id="pricing-heading" class="visually-hidden">Diagnostic options</h2>
+
+            <div class="pricing">
+                <article class="plan">
+                    <div class="plan__head">
+                        <p class="plan__price">Free</p>
+                        <h3 class="plan__name">Quick diagnostic</h3>
+                    </div>
+                    <ul class="checklist">
+                        <li>Power, boot, and obvious hardware or software faults</li>
+                        <li>A straight answer on whether it's worth fixing</li>
+                        <li>Rough estimate on the spot, no obligation</li>
+                    </ul>
+                    <p class="plan__note">
+                        Most problems stop here. If yours doesn't, I'll tell you before doing
+                        anything else.
+                    </p>
+                </article>
+
+                <!-- TODO: confirm the $49 amount and whether it is credited toward the repair -->
+                <article class="plan plan--featured">
+                    <div class="plan__head">
+                        <p class="plan__price">$49</p>
+                        <h3 class="plan__name">Full diagnostic</h3>
+                    </div>
+                    <ul class="checklist">
+                        <li>Bench testing and component swaps when the fault isn't obvious</li>
+                        <li>Drive health, memory, and temperature checks</li>
+                        <li>Written findings and a firm quote before any repair</li>
+                    </ul>
+                    <p class="plan__note">
+                        The $49 comes off the repair if you go ahead. Decline the quote and
+                        you pay only the diagnostic. If it turns into a bigger job, you'll
+                        hear from me before it goes further.
+                    </p>
+                </article>
+            </div>
+
+            <p class="pricing__foot">
+                Not sure which you need? Call and describe the symptom &mdash; I'll tell you
+                over the phone, free.
+            </p>
+
+            <div class="detail">
+                <h2>What the full diagnostic gets you</h2>
+                <ul class="detail__list detail__list--checks">
+                    <li>
+                        <strong>A confirmed fault, not a guess.</strong> I reproduce the problem
+                        instead of swapping parts and hoping something sticks.
+                    </li>
+                    <li>
+                        <strong>I test before you buy parts.</strong> Temperatures, memory, and
+                        drive health get checked so you're not paying for a replacement that
+                        isn't the problem.
+                    </li>
+                    <li>
+                        <strong>Written findings and a firm quote.</strong> Likely cause,
+                        recommended fix, parts and labor, and anything I couldn't verify.
+                    </li>
+                    <li>
+                        <strong>Your data left alone.</strong> I only look at what's needed to
+                        diagnose the fault, and I'll ask before copying anything.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <Cta heading="Know what's wrong already?" text="Call or email with the machine and the symptom, and I'll tell you what makes sense." />
+</BaseLayout>

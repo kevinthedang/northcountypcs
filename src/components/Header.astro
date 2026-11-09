@@ -1,12 +1,29 @@
+---
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const links = [
+    { href: '/services/', label: 'Services' },
+    { href: '/pricing/', label: 'Pricing' },
+    { href: '/process/', label: 'How it works' },
+    { href: '/service-area/', label: 'Service area' },
+    { href: '/contact/', label: 'Contact' },
+];
+---
+
 <header class="site-header">
     <div class="wrap site-header__inner">
         <a class="brand" href="/">North County PCs</a>
         <nav class="nav" aria-label="Primary">
-            <a href="/#services">Services</a>
-            <a href="/#diagnostic">Pricing</a>
-            <a href="/#process">How it works</a>
-            <a href="/#area">Service area</a>
-            <a href="/#contact">Contact</a>
+            {
+                links.map((link) => (
+                    <a
+                        href={link.href}
+                        aria-current={path === link.href.replace(/\/$/, '') ? 'page' : undefined}
+                    >
+                        {link.label}
+                    </a>
+                ))
+            }
         </nav>
         <!-- TODO: real phone number -->
         <a class="btn btn--sm" href="tel:+17605550100">Call now</a>

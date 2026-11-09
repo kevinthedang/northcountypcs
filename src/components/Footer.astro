@@ -1,3 +1,13 @@
+---
+const links = [
+    { href: '/services/', label: 'Services' },
+    { href: '/pricing/', label: 'Pricing' },
+    { href: '/process/', label: 'How it works' },
+    { href: '/service-area/', label: 'Service area' },
+    { href: '/contact/', label: 'Contact' },
+];
+---
+
 <footer class="site-footer">
     <div class="wrap">
         <address>
@@ -5,6 +15,9 @@
             <!-- TODO: real phone number -->
             <a href="tel:+17605550100">(760) 555-0100</a>
         </address>
+        <nav class="site-footer__nav" aria-label="Footer">
+            {links.map((link) => <a href={link.href}>{link.label}</a>)}
+        </nav>
         <p>&copy; {new Date().getFullYear()} North County PCs</p>
     </div>
 </footer>

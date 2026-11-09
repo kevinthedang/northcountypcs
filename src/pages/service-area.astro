@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Cta from '../components/Cta.astro';
+
+const title = 'Service Area | North County PCs';
+const description =
+    'On-site PC repair and drop-off service across Oceanside, Carlsbad, Vista, San Marcos, Encinitas, Escondido, Fallbrook, and Camp Pendleton.';
+---
+
+<BaseLayout title={title} description={description}>
+    <PageHero
+        eyebrow="Service area"
+        title="Oceanside and North County."
+        lead="Based in Oceanside. Drop-off is by appointment; on-site visits cover most of North County — call to confirm your address."
+    />
+
+    <section aria-labelledby="area-heading">
+        <div class="wrap">
+            <h2 id="area-heading" class="visually-hidden">Cities served</h2>
+
+            <div class="contact-grid">
+                <div class="panel">
+                    <h3>Cities and areas</h3>
+                    <p class="muted">
+                        If you're nearby but don't see your city, call anyway — I'll tell you
+                        honestly whether I can get to you.
+                    </p>
+                    <ul class="tags">
+                        <li>Oceanside</li>
+                        <li>Carlsbad</li>
+                        <li>Vista</li>
+                        <li>San Marcos</li>
+                        <li>Encinitas</li>
+                        <li>Escondido</li>
+                        <li>Fallbrook</li>
+                        <li>Camp Pendleton</li>
+                    </ul>
+                </div>
+
+                <div class="panel">
+                    <h3>Drop-off or on-site</h3>
+                    <p class="muted">
+                        Drop-off in Oceanside is by appointment, and the address is provided
+                        when you book. On-site visits are available across most of North
+                        County, depending on the job.
+                    </p>
+                    <p class="panel__link"><a href="/process/">See how it works</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <Cta heading="Not sure if I cover your address?" text="Call with your city or ZIP code and I'll confirm before you book." />
+</BaseLayout>

@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Cta from '../components/Cta.astro';
+
+const title = 'PC Builds, Upgrades & Tune-Ups | North County PCs';
+const description =
+    'Custom PC builds, SSD and RAM upgrades, tune-ups, clean Windows installs, and diagnostics in Oceanside, California.';
+---
+
+<BaseLayout title={title} description={description}>
+    <PageHero
+        eyebrow="Services"
+        title="What I work on."
+        lead="Desktops and laptops, home and small business. Builds, upgrades, and clean installs done carefully — plus a straight answer on whether the machine is worth it."
+    />
+
+    <section aria-labelledby="services-heading">
+        <div class="wrap">
+            <h2 id="services-heading" class="visually-hidden">Services</h2>
+
+            <div class="services-list">
+                <article class="card" id="custom-builds">
+                    <h2>Custom PC builds</h2>
+                    <p>
+                        Gaming rigs, workstations, and budget office machines specced to what you
+                        actually do &mdash; assembled, cable-managed, and stress-tested before
+                        pickup.
+                    </p>
+                    <ul class="checklist">
+                        <li>Spec'd around what you actually use the machine for</li>
+                        <li>Assembled and cable-managed</li>
+                        <li>Stress-tested before pickup</li>
+                    </ul>
+                </article>
+
+                <article class="card" id="upgrades">
+                    <h2>Upgrades</h2>
+                    <p>
+                        SSD and RAM upgrades, GPU installs, PSU replacements, cooling fixes.
+                        Usually the cheapest way to make an older machine feel new again.
+                    </p>
+                    <ul class="checklist">
+                        <li>SSD and RAM upgrades</li>
+                        <li>GPU installs and PSU replacements</li>
+                        <li>Cooling fixes and thermal paste</li>
+                        <li>A straight answer on whether the upgrade is worth it</li>
+                    </ul>
+                </article>
+
+                <article class="card" id="tune-ups">
+                    <h2>Tune-ups &amp; installs</h2>
+                    <p>
+                        Dust and thermal paste, a clean Windows install, drivers, and moving
+                        your files to a new drive. The difference is usually dramatic.
+                    </p>
+                    <ul class="checklist">
+                        <li>Dust removal and fresh thermal paste</li>
+                        <li>Clean Windows install and drivers</li>
+                        <li>Moving your files to a new drive</li>
+                        <li>Tested and verified before it goes back to you</li>
+                    </ul>
+                </article>
+
+                <article class="card" id="diagnostics">
+                    <h2>Diagnostics &amp; advice</h2>
+                    <p>
+                        Not sure if it's worth upgrading or replacing? Bring it in for a look.
+                        I'll tell you what I think is wrong, what I can fix, and what's beyond
+                        me.
+                    </p>
+                    <ul class="checklist">
+                        <li>Free first look at power, boot, and obvious faults</li>
+                        <li>Full bench diagnostic when the fault isn't obvious</li>
+                        <li>Written findings and a firm quote before any repair</li>
+                        <li>Referrals for board-level repair and data recovery</li>
+                    </ul>
+                </article>
+            </div>
+
+            <p class="services__note">
+                Board-level repair and data recovery from failed drives I refer out to
+                specialists &mdash; those are jobs you only get one shot at.
+            </p>
+        </div>
+    </section>
+
+    <Cta heading="Not sure which service you need?" text="Call and describe the symptom — I'll tell you over the phone, free." />
+</BaseLayout>

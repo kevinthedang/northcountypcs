@@ -28,11 +28,18 @@ list, in the `<title>`/description if it matters for search, and in the JSON-LD 
 
 | File | Purpose |
 | --- | --- |
-| `src/pages/index.astro` | The entire site: hero, services, pricing, process, service area, contact |
+| `src/pages/index.astro` | Home: hero, service overview, repair-first band, and call to action |
+| `src/pages/services.astro` | Detailed service list |
+| `src/pages/pricing.astro` | Diagnostic options and what the full diagnostic includes |
+| `src/pages/process.astro` | The four-step process, drop-off, and on-site options |
+| `src/pages/service-area.astro` | Cities served and coverage notes |
+| `src/pages/contact.astro` | Phone, email, hours, drop-off, and what to include |
 | `src/pages/404.astro` | Custom not-found page (built to `404.html`, which Pages serves automatically) |
 | `src/layouts/BaseLayout.astro` | Shared `<head>`, header, main wrapper, and footer |
 | `src/components/Header.astro` | Brand, primary nav, and call button |
-| `src/components/Footer.astro` | Address, phone, and copyright |
+| `src/components/Footer.astro` | Address, footer nav, phone, and copyright |
+| `src/components/PageHero.astro` | Compact hero used by the interior pages |
+| `src/components/Cta.astro` | Shared call-to-action panel |
 | `src/styles/global.css` | Design tokens, layout, dark mode, responsive rules |
 | `public/favicon.svg`, `public/robots.txt` | Static files copied unchanged into the build |
 | `astro.config.mjs` | Site URL and sitemap integration |

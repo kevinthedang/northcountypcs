@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+
+const title = 'Contact | North County PCs';
+const description =
+    'Call or email North County PCs in Oceanside for custom PC builds, upgrades, tune-ups, and diagnostics.';
+---
+
+<BaseLayout title={title} description={description}>
+    <PageHero
+        eyebrow="Contact"
+        title="Get in touch."
+        lead="Tell me what's wrong and I'll tell you what makes sense — free over the phone. A photo or exact error message helps."
+    >
+        <div class="hero__actions">
+            <!-- TODO: real phone number -->
+            <a class="btn" href="tel:+17605550100">Call (760) 555-0100</a>
+            <!-- TODO: real email address -->
+            <a
+                class="btn btn--ghost"
+                href="mailto:hello@northcountypcs.com?subject=Build%20or%20upgrade%20request"
+            >
+                Email about your PC
+            </a>
+        </div>
+    </PageHero>
+
+    <section aria-labelledby="contact-heading">
+        <div class="wrap">
+            <h2 id="contact-heading" class="visually-hidden">Contact details</h2>
+
+            <div class="contact-grid">
+                <div class="panel">
+                    <h3>Get in touch</h3>
+                    <dl class="contact-list">
+                        <div>
+                            <dt>Phone</dt>
+                            <!-- TODO: real phone number -->
+                            <dd><a href="tel:+17605550100">(760) 555-0100</a></dd>
+                        </div>
+                        <div>
+                            <dt>Email</dt>
+                            <!-- TODO: real email address -->
+                            <dd><a href="mailto:hello@northcountypcs.com">hello@northcountypcs.com</a></dd>
+                        </div>
+                        <div>
+                            <dt>Hours</dt>
+                            <dd>By appointment, Monday&ndash;Saturday</dd>
+                        </div>
+                        <div>
+                            <dt>Drop-off</dt>
+                            <dd>Oceanside &mdash; address provided when you book</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="panel">
+                    <h3>What to include</h3>
+                    <ul class="checklist">
+                        <li>Whether it's a desktop or laptop</li>
+                        <li>What the machine is doing wrong, and when it started</li>
+                        <li>Any error message, or a photo of the screen</li>
+                        <li>Anything you've already tried</li>
+                    </ul>
+                    <p class="panel__link"><a href="/service-area/">Check the service area</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>

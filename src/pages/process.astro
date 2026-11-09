@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Cta from '../components/Cta.astro';
+
+const title = 'How It Works | North County PCs';
+const description =
+    'How repairs work at North County PCs: describe the symptom, drop off or book on-site, approve the quote, then pick up a tested machine.';
+---
+
+<BaseLayout title={title} description={description}>
+    <PageHero
+        eyebrow="How it works"
+        title="Four steps, no runaround."
+        lead="Tell me what's wrong, get a firm quote before any work, and pick up a machine that has been tested and verified."
+    />
+
+    <section aria-labelledby="steps-heading">
+        <div class="wrap">
+            <h2 id="steps-heading" class="visually-hidden">The process</h2>
+
+            <ol class="steps">
+                <li>
+                    <h3>Tell me what's wrong</h3>
+                    <p>Call or email with the machine and the symptom. A photo or error message helps.</p>
+                </li>
+                <li>
+                    <h3>Drop off or book on-site</h3>
+                    <p>
+                        Drop off in Oceanside by appointment, or have me come to you anywhere
+                        in North County.
+                    </p>
+                </li>
+                <li>
+                    <h3>Approve the quote</h3>
+                    <p>
+                        Once I know what's wrong you get a firm price. Nothing gets replaced
+                        or repaired until you approve it.
+                    </p>
+                </li>
+                <li>
+                    <h3>Pick up a working machine</h3>
+                    <p>Everything is tested and verified before it goes back to you.</p>
+                </li>
+            </ol>
+
+            <div class="contact-grid process-options">
+                <div class="panel">
+                    <h3>Drop-off in Oceanside</h3>
+                    <p class="muted">
+                        Drop-off is by appointment. The address is provided when you book, and
+                        most repairs are handled here.
+                    </p>
+                    <p class="panel__link"><a href="/contact/">Book a drop-off</a></p>
+                </div>
+                <div class="panel">
+                    <h3>On-site across North County</h3>
+                    <p class="muted">
+                        On-site visits cover most of North County. Call to confirm your address
+                        before booking.
+                    </p>
+                    <p class="panel__link"><a href="/service-area/">Check the service area</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <Cta />
+</BaseLayout>
